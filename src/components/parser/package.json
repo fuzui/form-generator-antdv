@@ -1,0 +1,25 @@
+{
+  "name": "form-gen-antdv-parser",
+  "version": "1.0.0",
+  "description": "表单json解析器",
+  "main": "form-gen-antdv-parser.umd.js ",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuzui/form-generator-antdv.git"
+  },
+  "dependencies": {
+    "form-gen-antdv-render": "^1.0.0"
+  },
+  "author": "fuzui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fuzui/form-generator-antdv/issues"
+  },
+  "homepage": "https://github.com/fuzui/form-generator-antdv/tree/master/src/components/parser"
+}
