@@ -12,7 +12,7 @@ export function dialogWrapper(str) {
       <a-button @click="close">${(i18nRender('base.close'))}</a-button>
       <a-button type="primary" @click="handelConfirm">${(i18nRender('base.ok'))}</a-button>
     </div>
-  </a-modal`
+  </a-modal>`
 }
 
 export function vueTemplate(str) {
