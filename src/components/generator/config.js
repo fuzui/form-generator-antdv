@@ -633,6 +633,7 @@ export const selectComponents = [
 export const layoutComponents = [
   {
     __config__: {
+      span: 24,
       layout: 'rowFormItem',
       tagIcon: 'rowIcon',
       label: 'tag.row.label',
