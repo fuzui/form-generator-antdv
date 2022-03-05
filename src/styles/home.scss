@@ -37,7 +37,7 @@ $lighterBlue: #409EFF;
   float: right;
 }
 .center-main {
-  height: calc(100vh - 84px);
+  height: calc(100vh - 88px);
   overflow-y: auto;
   margin: 24px 16px 0;
 }
@@ -106,8 +106,18 @@ $lighterBlue: #409EFF;
   margin: 0 0 0 12px;
 }
 
+.center-board-row {
+  box-sizing: border-box;
+  & > .ant-form {
+    // 69 = 12+15+42
+    padding: 24px;
+    background: #fff;
+    min-height: calc(100vh - 69px - 88px - 24px - 24px);
+  }
+}
+
 .drawing-board {
-  // height: 100%;
+  min-height: inherit;
   position: relative;
   .components-body {
     padding: 0;

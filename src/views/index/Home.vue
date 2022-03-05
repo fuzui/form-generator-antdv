@@ -65,7 +65,7 @@
       </a-layout-header>
       <div class="center-main">
         <a-layout-content>
-          <a-row :style="{ padding: '24px', background: '#fff', minHeight: 'calc(100vh - 64px - 24px - 64px)'}">
+          <a-row class="center-board-row">
             <a-form-model
               :label-align="formConf.labelAlign"
               :layout="formConf.layout"
@@ -87,13 +87,13 @@
                   @copyItem="drawingItemCopy"
                   @deleteItem="drawingItemDelete"
                 />
+                <a-result v-show="!drawingList.length" :title="$t('base.left.drag')">
+                  <template #icon>
+                    <a-icon type="appstore" theme="twoTone" />
+                  </template>
+                  <template #extra />
+                </a-result>
               </draggable>
-              <a-result v-show="!drawingList.length" :title="$t('base.left.drag')">
-                <template #icon>
-                  <a-icon type="appstore" theme="twoTone" />
-                </template>
-                <template #extra />
-              </a-result>
             </a-form-model>
           </a-row>
         </a-layout-content>
