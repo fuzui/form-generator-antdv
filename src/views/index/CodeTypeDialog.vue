@@ -1,11 +1,9 @@
 <template>
   <div>
     <a-modal
-      v-bind="$attrs"
+      v-model="visible"
+      :title="$t('base.choose.build.type')"
       width="500px"
-      :close-on-click-modal="false"
-      :modal-append-to-body="false"
-      v-on="$listeners"
       @ok="handelConfirm"
       @cancel="close"
     >
@@ -51,9 +49,10 @@
 <script>
 export default {
   inheritAttrs: false,
-  props: ['showFileName'],
   data() {
     return {
+      showFileName: false,
+      visible: false,
       formData: {
         fileName: undefined,
         type: 'file'
@@ -88,15 +87,15 @@ export default {
   watch: {},
   mounted() {},
   methods: {
-    onOpen() {
-      if (this.showFileName) {
+    onOpen(showFileName) {
+      this.showFileName = showFileName
+      this.visible = true
+      if (showFileName) {
         this.formData.fileName = `${+new Date()}.vue`
       }
     },
-    onClose() {
-    },
-    close(e) {
-      this.$emit('update:visible', false)
+    close() {
+      this.visible = false
     },
     handelConfirm() {
       this.$refs.elForm.validate(valid => {

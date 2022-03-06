@@ -118,7 +118,6 @@
     </a-layout-sider>
     <form-drawer
       ref="formDrawer"
-      :visible.sync="drawerVisible"
       :form-data="formData"
       size="100%"
       :generate-conf="generateConf"
@@ -129,9 +128,7 @@
       @refresh="refreshJson"
     />
     <code-type-dialog
-      :visible.sync="dialogVisible"
-      :title="$t('base.choose.build.type')"
-      :show-file-name="showFileName"
+      ref="codeTypeDialog"
       @confirm="generate"
     />
     <input id="copyNode" type="hidden">
@@ -194,12 +191,8 @@ export default {
       drawingList: drawingDefalut,
       drawingData: {},
       activeId: drawingDefalut[0].formId,
-      drawerVisible: false,
       formData: {},
-      dialogVisible: false,
-      jsonDrawerVisible: false,
       generateConf: null,
-      showFileName: false,
       activeData: drawingDefalut[0],
       leftComponents: [
         {
@@ -396,7 +389,6 @@ export default {
     execRun(data) {
       this.AssembleFormData()
       this.$refs.formDrawer.onOpen(this.formData, this.generateConf)
-      this.drawerVisible = true
     },
     execDownload(data) {
       const codeStr = this.generateCode()
@@ -442,21 +434,17 @@ export default {
     showJson() {
       this.AssembleFormData()
       this.$refs.jsonDrawer.onOpen(stringify(this.formData))
-      this.jsonDrawerVisible = true
     },
     download() {
-      this.dialogVisible = true
-      this.showFileName = true
+      this.$refs.codeTypeDialog.onOpen(true)
       this.operationType = 'download'
     },
     run() {
-      this.dialogVisible = true
-      this.showFileName = false
+      this.$refs.codeTypeDialog.onOpen(false)
       this.operationType = 'run'
     },
     copy() {
-      this.dialogVisible = true
-      this.showFileName = false
+      this.$refs.codeTypeDialog.onOpen(false)
       this.operationType = 'copy'
     },
     tagChange(newTag) {
