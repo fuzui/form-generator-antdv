@@ -415,13 +415,13 @@
           v-if="activeData.__config__.tag === 'a-auto-complete'"
           :label="$t('base.datasource')"
         >
-          <template v-for="(tag, index) in activeData['data-source']">
+          <template v-for="(tag) in activeData['data-source']">
             <a-tooltip v-if="tag.length > 20" :key="tag" :title="tag">
-              <a-tag :key="tag" :closable="index !== 0" @close="() => handleAutoDataSourceClose(tag)">
+              <a-tag :key="tag" :closable="true" @close="() => handleAutoDataSourceClose(tag)">
                 {{ `${tag.slice(0, 20)}...` }}
               </a-tag>
             </a-tooltip>
-            <a-tag v-else :key="tag" :closable="index !== 0" @close="() => handleAutoDataSourceClose(tag)">
+            <a-tag v-else :key="tag" :closable="true" @close="() => handleAutoDataSourceClose(tag)">
               {{ tag }}
             </a-tag>
           </template>
