@@ -11,7 +11,12 @@ const units = {
 let confGlobal
 const inheritAttrs = {
   file: '',
-  dialog: 'inheritAttrs: false,'
+  modal: 'inheritAttrs: false,'
+}
+
+const visibleType = {
+  file: '',
+  modal: 'visible: false,'
 }
 
 /**
@@ -146,13 +151,13 @@ function mixinMethod(type) {
         this.$refs['${confGlobal.formRef}'].resetFields()
       },`
       } : null,
-      dialog: {
-        onOpen: 'onOpen() {},',
-        onClose: `onClose() {
-        this.$refs['${confGlobal.formRef}'].resetFields()
+      modal: {
+        onOpen: `onOpen() {
+          this.visible = true
       },`,
         close: `close() {
-        this.$emit('update:visible', false)
+        this.$refs['${confGlobal.formRef}'].resetFields()
+        this.visible = false
       },`,
         handelConfirm: `handelConfirm() {
         this.$refs['${confGlobal.formRef}'].validate(valid => {
@@ -305,6 +310,7 @@ function buildexport(conf, type, data, rules, selectOptions,
   props: [],
   data () {
     return {
+      ${visibleType[type]}
       ${conf.formModel}: {
         ${data}
       },

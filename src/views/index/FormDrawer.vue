@@ -1,6 +1,11 @@
 <template>
   <div>
-    <a-drawer :visible="visible" width="100%" :body-style="{ padding: '0px' }" :closable="false" @close="onClose">
+    <a-drawer
+      :visible="visible"
+      width="100%"
+      :body-style="{ padding: '0px' }"
+      :closable="false" @close="onClose"
+    >
       <div style="height:100vh">
         <a-row style="height:100vh; overflow:auto">
           <a-col :md="24" :lg="12" class="left-editor">
@@ -75,15 +80,15 @@
               ref="previewPage"
               class="result-wrapper"
               frameborder="0"
-              src="preview.html"
+              :src="iframeSrc"
               @load="iframeLoad"
             />
           </a-col>
         </a-row>
       </div>
     </a-drawer>
-    <resource-dialog
-      ref="resourceDialog"
+    <resource-modal
+      ref="resourceModal"
       @save="setResource"
     />
     <export-modal ref="exportModal" @confirm="exportFile" />
@@ -99,7 +104,7 @@ import {
 import { makeUpJs } from '@/components/generator/js'
 import { makeUpCss } from '@/components/generator/css'
 import { exportDefault, beautifierConf, titleCase } from '@/utils/index'
-import ResourceDialog from './ResourceDialog'
+import ResourceModal from './ResourceModal'
 import ExportModal from './ExportModal'
 import loadMonaco from '@/utils/loadMonaco'
 import loadBeautifier from '@/utils/loadBeautifier'
@@ -119,7 +124,7 @@ let monaco
 
 export default {
   components: {
-    ResourceDialog,
+    ResourceModal,
     ExportModal
   },
   data() {
@@ -137,7 +142,8 @@ export default {
       isRefreshCode: false, // 每次打开都需要重新刷新代码
       scripts: [],
       links: [],
-      monaco: null
+      monaco: null,
+      iframeSrc: 'preview.html'
     }
   },
   computed: {
@@ -181,7 +187,6 @@ export default {
       this.htmlCode = makeUpHtml(formData, type)
       this.jsCode = makeUpJs(formData, type)
       this.cssCode = makeUpCss(formData)
-
       loadBeautifier(btf => {
         beautifier = btf
         this.htmlCode = beautifier.html(this.htmlCode, beautifierConf.html)
@@ -207,6 +212,7 @@ export default {
       this.visible = false
       this.isInitcode = false
       this.isRefreshCode = false
+      // this.$refs.previewPage.src = this.iframeSrc
     },
     iframeLoad() {
       if (!this.isInitcode) {
@@ -259,7 +265,6 @@ export default {
               links: this.links
             }
           }
-
           this.$refs.previewPage.contentWindow.postMessage(
             postData,
             location.origin
@@ -285,7 +290,7 @@ export default {
       saveAs(blob, fileName)
     },
     showResource() {
-      this.$refs.resourceDialog.onOpen(this.resources)
+      this.$refs.resourceModal.onOpen(this.resources)
     },
     setResource(arr) {
       const scripts = []; const

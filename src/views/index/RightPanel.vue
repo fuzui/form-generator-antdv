@@ -185,7 +185,7 @@
         >
           <a-space size="large">
             <a-icon v-if="activeData.__slot__.addonBefore" :type="activeData.__slot__.addonBefore" />
-            <a-button type="dashed" @click="openIconsDialog('addonBefore', true)">
+            <a-button type="dashed" @click="openIconsModal('addonBefore', true)">
               {{ $t('base.icon.choose') }}
             </a-button>
             <a-button
@@ -203,7 +203,7 @@
         >
           <a-space size="large">
             <a-icon v-if="activeData.__slot__.addonAfter" :type="activeData.__slot__.addonAfter" />
-            <a-button type="dashed" @click="openIconsDialog('addonAfter', true)">
+            <a-button type="dashed" @click="openIconsModal('addonAfter', true)">
               {{ $t('base.icon.choose') }}
             </a-button>
             <a-button
@@ -221,7 +221,7 @@
         >
           <a-space size="large">
             <a-icon :type="activeData['icon']" />
-            <a-button type="dashed" @click="openIconsDialog('icon', false)">
+            <a-button type="dashed" @click="openIconsModal('icon', false)">
               {{ $t('base.icon.choose') }}
             </a-button>
             <a-button
@@ -930,14 +930,14 @@
         @change="handleIconChange"
       />
     </a-modal>
-    <treeNode-dialog ref="treeNodeDialog" :title="$t('base.add.option')" @commit="addNode" />
+    <treeNode-modal ref="treeNodeModal" :title="$t('base.add.option')" @commit="addNode" />
   </div>
 </template>
 
 <script>
 import allIcon from '@/core/icons'
 import { isArray } from 'util'
-import TreeNodeDialog from '@/views/index/TreeNodeDialog'
+import TreeNodeModal from '@/views/index/TreeNodeModal'
 import { isNumberStr } from '@/utils/index'
 import {
   inputComponents, selectComponents
@@ -950,7 +950,7 @@ const needRerenderList = []
 
 export default {
   components: {
-    TreeNodeDialog,
+    TreeNodeModal,
     IconSelector
   },
   props: ['showField', 'activeData', 'formConf'],
@@ -1081,14 +1081,14 @@ export default {
     },
     addTreeItem(keyName) {
       ++this.idGlobal
-      this.$refs.treeNodeDialog.open()
+      this.$refs.treeNodeModal.open()
       this.currentNode = this.activeData[keyName]
     },
     append(data) {
       if (!data.children) {
         this.$set(data, 'children', [])
       }
-      this.$refs.treeNodeDialog.open()
+      this.$refs.treeNodeModal.open()
       this.currentNode = data.children
     },
     remove(node) {
@@ -1180,7 +1180,7 @@ export default {
         val ? [this.activeData.min, this.activeData.max] : this.activeData.min
       )
     },
-    openIconsDialog(model, modelConfig) {
+    openIconsModal(model, modelConfig) {
       this.iconsVisible = true
       this.currentIconModelSlot = modelConfig
       this.currentIconModel = model

@@ -5,14 +5,14 @@ import { i18nRender } from '@/locales'
 let confGlobal
 let someSpanIsNot24
 
-export function dialogWrapper(str) {
-  return `<a-modal v-bind="$attrs" v-on="$listeners" @open="onOpen" @cancel="onClose" title="Form Titile">
+export function modalWrapper(str) {
+  return `<div id="modal"><a-modal :visible="visible" get-container="#modal" @cancel="close" title="Form Titile">
     ${str}
     <div slot="footer">
       <a-button @click="close">${(i18nRender('base.close'))}</a-button>
       <a-button type="primary" @click="handelConfirm">${(i18nRender('base.ok'))}</a-button>
     </div>
-  </a-modal>`
+  </a-modal></div>`
 }
 
 export function vueTemplate(str) {
@@ -559,9 +559,9 @@ export function makeUpHtml(formConfig, type) {
   const htmlStr = htmlList.join('\n')
   // 将组件代码放进form标签
   let temp = buildFormTemplate(formConfig, htmlStr, type)
-  // dialog标签包裹代码
-  if (type === 'dialog') {
-    temp = dialogWrapper(temp)
+  // modal标签包裹代码
+  if (type === 'modal') {
+    temp = modalWrapper(temp)
   }
   confGlobal = null
   return temp

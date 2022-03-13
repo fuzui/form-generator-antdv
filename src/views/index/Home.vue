@@ -127,8 +127,8 @@
       size="60%"
       @refresh="refreshJson"
     />
-    <code-type-dialog
-      ref="codeTypeDialog"
+    <code-type-modal
+      ref="codeTypeModal"
       @confirm="generate"
     />
     <input id="copyNode" type="hidden">
@@ -157,7 +157,7 @@ import { makeUpJs } from '@/components/generator/js'
 import { makeUpCss } from '@/components/generator/css'
 import drawingDefalut from '@/components/generator/drawingDefalut'
 import logo from '@/assets/logo.png'
-import CodeTypeDialog from './CodeTypeDialog'
+import CodeTypeModal from './CodeTypeModal'
 import DraggableItem from './DraggableItem'
 import { DRAWING_ITEMS, DRAWING_ID } from '@/store/mutation-types'
 import loadBeautifier from '@/utils/loadBeautifier'
@@ -175,7 +175,7 @@ export default {
     FormDrawer,
     JsonDrawer,
     RightPanel,
-    CodeTypeDialog,
+    CodeTypeModal,
     DraggableItem,
     SelectLang
   },
@@ -436,15 +436,15 @@ export default {
       this.$refs.jsonDrawer.onOpen(stringify(this.formData))
     },
     download() {
-      this.$refs.codeTypeDialog.onOpen(true)
+      this.$refs.codeTypeModal.onOpen(true)
       this.operationType = 'download'
     },
     run() {
-      this.$refs.codeTypeDialog.onOpen(false)
+      this.$refs.codeTypeModal.onOpen(false)
       this.operationType = 'run'
     },
     copy() {
-      this.$refs.codeTypeDialog.onOpen(false)
+      this.$refs.codeTypeModal.onOpen(false)
       this.operationType = 'copy'
     },
     tagChange(newTag) {

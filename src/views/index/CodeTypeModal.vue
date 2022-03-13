@@ -80,7 +80,7 @@ export default {
         value: 'file'
       }, {
         label: this.$t('base.modal'),
-        value: 'dialog'
+        value: 'modal'
       }]
     }
   },
