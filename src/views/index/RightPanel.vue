@@ -157,22 +157,6 @@
             @input="onDefaultValueInput"
           />
         </a-form-model-item>
-        <a-form-model-item v-if="activeData.__config__.tag==='a-checkbox-group'" :label="$t('base.choose.least')">
-          <a-input-number
-            :value="activeData.min"
-            :min="0"
-            :placeholder="$t('base.choose.least')"
-            @input="$set(activeData, 'min', $event?$event:undefined)"
-          />
-        </a-form-model-item>
-        <a-form-model-item v-if="activeData.__config__.tag==='a-checkbox-group'" :label="$t('base.choose.most')">
-          <a-input-number
-            :value="activeData.max"
-            :min="0"
-            :placeholder="$t('base.choose.most')"
-            @input="$set(activeData, 'max', $event?$event:undefined)"
-          />
-        </a-form-model-item>
         <a-form-model-item v-if="activeData['prefix']!==undefined" :label="$t('base.prefix')">
           <a-input v-model="activeData['prefix']" :placeholder="$t('base.prefix')" />
         </a-form-model-item>

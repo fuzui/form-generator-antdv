@@ -98,8 +98,6 @@ export default {
   'base.component.width': '组件宽度',
   'base.component.height': '组件宽度',
   'base.default.value': '默认值',
-  'base.choose.least': '至少应选',
-  'base.default.most': '最多可选',
   'base.prefix': '前缀',
   'base.suffix': '后缀',
   'base.icon.before': '前图标',

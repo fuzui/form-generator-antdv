@@ -99,8 +99,6 @@ export default {
   'base.component.width': 'Component width',
   'base.component.height': 'Component width',
   'base.default.value': 'default value',
-  'base.choose.least': 'At least should be selected',
-  'base.default.most': 'Most optional',
   'base.prefix': 'Prefix',
   'base.suffix': 'Suffix',
   'base.icon.before': 'Before Icon',
