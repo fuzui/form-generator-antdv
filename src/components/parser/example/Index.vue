@@ -56,7 +56,7 @@ export default {
             required: true,
             layout: 'colFormItem',
             span: 24,
-            document: 'https://antdv.com/components/input-cn/',
+            document: 'https://1x.antdv.com/components/input-cn/',
             regList: [{
               pattern: '/^([a-zA-Z0-9]+[_|\\_|\\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]'
                 + '+[_|\\_|\\.]?)*[a-zA-Z0-9]+\\.[a-zA-Z]{2,3}$/',
@@ -90,7 +90,7 @@ export default {
             required: true,
             layout: 'colFormItem',
             span: 24,
-            document: 'https://antdv.com/components/input-cn/',
+            document: 'https://1x.antdv.com/components/input-cn/',
             regList: [],
             formId: 110,
             renderKey: '1101644568365576'
@@ -123,7 +123,7 @@ export default {
             optionType: 'button',
             regList: [],
             required: true,
-            document: 'https://antdv.com/components/radio-cn/',
+            document: 'https://1x.antdv.com/components/radio-cn/',
             formId: 112,
             renderKey: '1121644568483655'
           },
@@ -152,7 +152,7 @@ export default {
             required: true,
             regList: [],
             changeTag: true,
-            document: 'https://antdv.com/components/select-cn/',
+            document: 'https://1x.antdv.com/components/select-cn/',
             formId: 113,
             renderKey: '1131644568631414'
           },
@@ -198,7 +198,7 @@ export default {
             required: true,
             regList: [],
             changeTag: true,
-            document: 'https://antdv.com/components/checkbox-cn/',
+            document: 'https://1x.antdv.com/components/checkbox-cn/',
             formId: 103,
             renderKey: '1031644566265011'
           },
@@ -236,7 +236,7 @@ export default {
             required: true,
             regList: [],
             changeTag: true,
-            document: 'https://antdv.com/components/transfer-cn/',
+            document: 'https://1x.antdv.com/components/transfer-cn/',
             formId: 108,
             renderKey: '1081644566669092',
             defaultValue: ['Input', 'Textarea', 'Password', 'Number', 'Search', 'Complete', 'Mentions',
@@ -436,7 +436,7 @@ export default {
             required: true,
             regList: [],
             changeTag: true,
-            document: 'https://antdv.com/components/rate-cn/',
+            document: 'https://1x.antdv.com/components/rate-cn/',
             formId: 104,
             renderKey: '1041644566436153'
           },
@@ -457,7 +457,7 @@ export default {
             span: 24,
             regList: [],
             changeTag: true,
-            document: 'https://antdv.com/components/input-cn/',
+            document: 'https://1x.antdv.com/components/input-cn/',
             formId: 106,
             renderKey: '1061644566477736'
           },
@@ -485,7 +485,7 @@ export default {
             required: true,
             regList: [],
             changeTag: true,
-            document: 'https://antdv.com/components/switch-cn/',
+            document: 'https://1x.antdv.com/components/switch-cn/',
             formId: 109,
             renderKey: '1091644568341128'
           },
@@ -526,7 +526,7 @@ export default {
             required: true,
             layout: 'colFormItem',
             span: 24,
-            document: 'https://antdv.com/components/input-cn/',
+            document: 'https://1x.antdv.com/components/input-cn/',
             regList: [],
             formId: 101,
             renderKey: '1011644576921706'
@@ -556,7 +556,7 @@ export default {
             required: true,
             layout: 'colFormItem',
             span: 24,
-            document: 'https://antdv.com/components/input-cn/',
+            document: 'https://1x.antdv.com/components/input-cn/',
             regList: [],
             formId: 102,
             renderKey: '1021644577291927'
@@ -589,7 +589,7 @@ export default {
             optionType: 'button',
             regList: [],
             required: true,
-            document: 'https://antdv.com/components/radio-cn/',
+            document: 'https://1x.antdv.com/components/radio-cn/',
             formId: 105,
             renderKey: '1051644577795282'
           },
@@ -618,7 +618,7 @@ export default {
             layout: 'colFormItem',
             required: true,
             regList: [],
-            document: 'https://antdv.com/components/auto-complete-cn/',
+            document: 'https://1x.antdv.com/components/auto-complete-cn/',
             formId: 108,
             renderKey: '1081644577943800'
           },
@@ -646,7 +646,7 @@ export default {
             required: false,
             regList: [],
             changeTag: true,
-            document: 'https://antdv.com/components/date-picker-cn/',
+            document: 'https://1x.antdv.com/components/date-picker-cn/',
             formId: 110,
             renderKey: '1101644578161679'
           },
@@ -674,7 +674,7 @@ export default {
             span: 24,
             regList: [],
             changeTag: true,
-            document: 'https://antdv.com/components/input-cn/',
+            document: 'https://1x.antdv.com/components/input-cn/',
             formId: 109,
             renderKey: '1091644578135152'
           },
@@ -706,7 +706,7 @@ export default {
             changeTag: true,
             fileSize: 2,
             sizeUnit: 'MB',
-            document: 'https://antdv.com/components/upload-cn/',
+            document: 'https://1x.antdv.com/components/upload-cn/',
             formId: 111,
             renderKey: '1111644578215325'
           },
@@ -730,7 +730,7 @@ export default {
             required: false,
             layout: 'colFormItem',
             span: 24,
-            document: 'https://antdv.com/components/input-cn/',
+            document: 'https://1x.antdv.com/components/input-cn/',
             regList: [{
               pattern: '/^([a-zA-Z0-9]+[_|\\_|\\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]'
                 + '+[_|\\_|\\.]?)*[a-zA-Z0-9]+\\.[a-zA-Z]{2,3}$/',

@@ -23,7 +23,7 @@
 
 * form-generator：[https://github.com/JakHuang/form-generator](https://github.com/JakHuang/form-generator)
 
-* Ant Design Vue文档：[https://www.antdv.com/docs/vue/introduce-cn/](https://www.antdv.com/docs/vue/introduce-cn/)
+* Ant Design Vue文档：[https://1x.antdv.com/docs/vue/introduce-cn/](https://1x.antdv.com/docs/vue/introduce-cn/)
 
 ## JSON解析器
 

@@ -10,7 +10,7 @@ export default [
       required: true,
       layout: 'colFormItem',
       span: 24,
-      document: 'https://antdv.com/components/input-cn/',
+      document: 'https://1x.antdv.com/components/input-cn/',
       // 正则校验规则
       regList: [{
         pattern: '/^1(3|4|5|7|8|9)\\d{9}$/',
