@@ -27,7 +27,12 @@
           <a-button icon="copy" type="primary" class="copy-json-btn" style="marginRight: 8px">
             {{ $t('base.copy.json.code') }}
           </a-button>
-          <a-button icon="cloud-download" type="primary" style="marginRight: 8px" @click="$refs.exportModal.onOpen()">
+          <a-button
+            icon="cloud-download"
+            type="primary"
+            style="marginRight: 8px"
+            @click="$refs.exportModal.onOpen('json')"
+          >
             {{ $t('base.export.json.file') }}
           </a-button>
           <a-button icon="close" @click="onClose">

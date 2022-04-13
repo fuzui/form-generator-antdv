@@ -43,8 +43,8 @@ export default {
   watch: {},
   mounted() {},
   methods: {
-    onOpen() {
-      this.formData.fileName = `${+new Date()}.vue`
+    onOpen(suffix) {
+      this.formData.fileName = `${+new Date()}.${suffix}`
       this.visible = true
     },
     onClose() {

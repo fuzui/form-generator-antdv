@@ -63,7 +63,7 @@
                 {{ $t('base.refresh') }}
               </a-button>
               <a-divider type="vertical" />
-              <a-button icon="cloud-download" type="link" size="small" @click="$refs.exportModal.onOpen()">
+              <a-button icon="cloud-download" type="link" size="small" @click="$refs.exportModal.onOpen('vue')">
                 {{ $t('base.export.vue.file') }}
               </a-button>
               <a-divider type="vertical" />
